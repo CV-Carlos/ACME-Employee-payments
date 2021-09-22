@@ -1,0 +1,50 @@
+repositories {
+    mavenLocal()
+    jcenter()
+}
+
+buildscript {
+    repositories {
+        mavenLocal()
+        jcenter()
+    }
+    dependencies {
+        classpath("net.serenity-bdd:serenity-gradle-plugin:2.4.34")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'net.serenity-bdd.aggregator'
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+ext {
+    slf4jVersion = '1.7.7'
+    serenityCoreVersion = '2.6.0'
+    serenityCucumberVersion = '2.6.0'
+    junitVersion = '4.13.1'
+    assertJVersion = '3.8.0'
+    logbackVersion = '1.2.3'
+}
+
+dependencies {
+    testImplementation "net.serenity-bdd:serenity-core:${serenityCoreVersion}",
+            "net.serenity-bdd:serenity-cucumber6:${serenityCucumberVersion}",
+            "net.serenity-bdd:serenity-screenplay:${serenityCoreVersion}",
+            "net.serenity-bdd:serenity-screenplay-webdriver:${serenityCoreVersion}",
+            "net.serenity-bdd:serenity-ensure:${serenityCoreVersion}",
+            "junit:junit:${junitVersion}",
+            "org.assertj:assertj-core:${assertJVersion}",
+            'org.slf4j:slf4j-simple:1.6.2'
+
+}
+
+test {
+    testLogging.showStandardStreams = true
+    systemProperties System.getProperties()
+}
+
+gradle.startParameter.continueOnFailure = true
+
+test.finalizedBy(aggregate)

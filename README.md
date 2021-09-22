@@ -1,5 +1,7 @@
 # ACME-payments
 
+** Initial information and requirements **
+
 Time slots - Payments
 
 Monday - Friday
@@ -37,9 +39,9 @@ SU: Sunday
 
 OUTPUT The amount to pay {EMPLOYEE} is:{AMOUNT} USD
 
-TESTING
+**TESTING**
 
-SCENARIOS
+_SCENARIOS_
 
 Feature: Calculate payment
 

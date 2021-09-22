@@ -1,6 +1,6 @@
 # ACME-payments
 
-** Initial information and requirements **
+**Initial information and requirements**
 
 Time slots - Payments
 

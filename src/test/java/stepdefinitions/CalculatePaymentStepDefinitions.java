@@ -20,19 +20,15 @@ public class CalculatePaymentStepDefinitions {
         throw new io.cucumber.java.PendingException();
     }
 
-//    @When("{actor} checks what his/her payment is")
-//    public void companyCheckWhatHisHerPaymentIs(Actor actor) {
-//        // Write code here that turns the phrase above into concrete actions
-//        throw new io.cucumber.java.PendingException();
-//    }
+    @When("{actor} checks what the payment is")
+    public void companyChecksWhatThePaymentIs(Actor actor) {
+        throw new io.cucumber.java.PendingException();
+    }
 
-    @Then("{actor} should see payment ${int}")
-    public void companyShouldSeePayment$(Actor actor, Integer payment) {
+    @Then("{actor} should see payment ${double}")
+    public void companyShouldSeePayment$(Actor actor, double payment) {
         // Write code here that turns the phrase above into concrete actions
         throw new io.cucumber.java.PendingException();
     }
 
-    @When("{actor} checks what the payment is")
-    public void companyChecksWhatThePaymentIs(Actor actor) {
-    }
 }

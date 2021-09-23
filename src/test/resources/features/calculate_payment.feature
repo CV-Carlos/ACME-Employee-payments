@@ -67,7 +67,7 @@ Feature: Calculate the payment
       | actor | employeeShift                 | actor1  | payment |
       | Mateo | MO:03:10-15:00                | Company | 235.58  |
       | Mateo | MO:12:01-15:00,MO:18:01-23:00 | Company | 174.33  |
-      | Mateo | SA:03:10-12:15  		| Company | 240     |
+      | Mateo | SA:03:10-12:15  	          | Company | 240     |
       | Mateo | SA:12:01-15:00,SA:18:01-23:00 | Company | 190.913 |
 
   Scenario Outline: Calculating the payment with multiples days
@@ -76,7 +76,7 @@ Feature: Calculate the payment
     Then <actor1> should see payment $<payment>
 
     Examples:
-      | actor | employeeShift                                                            | actor1  | payment |
+      | actor | employeeShift                                                           | actor1  | payment |
       | Mateo | MO10:00-12:00,TU10:00-12:00,TH01:00-03:00,SA14:00-18:00,SU20:00-21:00	| Company | 215	 	 |
       | Mateo | MO10:00-12:00,TH12:00-14:00,SU20:00-21:00 				                | Company | 85  	 |
       | Mateo | SA:12:01-15:20,MO:03:10-07:15,TH12:00-14:00,WE:10:00-18:00 		        | Company | 201  	 |

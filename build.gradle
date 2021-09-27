@@ -29,6 +29,8 @@ ext {
 }
 
 dependencies {
+    implementation 'org.junit.jupiter:junit-jupiter:5.7.0'
+    implementation 'org.junit.jupiter:junit-jupiter:5.7.0'
     testImplementation "net.serenity-bdd:serenity-core:${serenityCoreVersion}",
             "net.serenity-bdd:serenity-cucumber6:${serenityCucumberVersion}",
             "net.serenity-bdd:serenity-screenplay:${serenityCoreVersion}",
@@ -36,7 +38,8 @@ dependencies {
             "net.serenity-bdd:serenity-ensure:${serenityCoreVersion}",
             "junit:junit:${junitVersion}",
             "org.assertj:assertj-core:${assertJVersion}",
-            'org.slf4j:slf4j-simple:1.6.2'
+            'org.slf4j:slf4j-simple:1.6.2',
+            'org.junit.platform:junit-platform-commons:1.5.2'
 
 }
 

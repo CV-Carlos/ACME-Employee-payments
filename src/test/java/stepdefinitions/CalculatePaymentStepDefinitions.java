@@ -1,34 +1,45 @@
 package stepdefinitions;
 
-import io.cucumber.java.Before;
-import io.cucumber.java.ParameterType;
+import Controller.CalculateSalary;
+import Helpers.InputValidation;
+import Model.EmployeeEntry;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import net.serenitybdd.screenplay.Actor;
-import net.serenitybdd.screenplay.actors.OnStage;
-import net.serenitybdd.screenplay.actors.OnlineCast;
-import net.serenitybdd.screenplay.ensure.Ensure;
 
-import java.sql.Time;
+import java.io.ByteArrayInputStream;
+import java.io.InputStream;
+import java.nio.charset.StandardCharsets;
+import java.util.Scanner;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class CalculatePaymentStepDefinitions {
 
+    private EmployeeEntry entry;
+    private String lastValidInput;
+    private boolean inputValidationResult;
 
     @Given("{actor} worked on {employeeShift}")
     public void creatingEmployeeEntry(Actor actor, String employeeShift) {
-        throw new io.cucumber.java.PendingException();
+        actor.entersTheScene();
+        String input = new String(actor + "=" + employeeShift);
+        this.inputValidationResult = InputValidation.inputIsCorrect(input);
+        this.lastValidInput = InputValidation.getLastValidInput();
+        assertTrue(this.inputValidationResult);
     }
 
     @When("{actor} checks what the payment is")
     public void companyChecksWhatThePaymentIs(Actor actor) {
-        throw new io.cucumber.java.PendingException();
+        actor.entersTheScene();
+        this.entry = CalculateSalary.calculateNewEntry(this.lastValidInput);
     }
 
     @Then("{actor} should see payment ${double}")
     public void companyShouldSeePayment$(Actor actor, double payment) {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        assertTrue(this.entry.getPayment() == payment);
     }
 
 }

@@ -129,4 +129,22 @@ Feature: Calculate payment
 	- Is starting time before ending time?
 
 
+**Now based on the test cases above, lets determine which are the components of the feature**
+
+- User facing side of the application to input the employeee working hours and output the result -> Must have (value of 1)
+- Single day, single slot, complete hours payment calculation -> Must have (value of 2)
+- Singe day, single slot, fractions of an hour payment calculation -> Must have (value of 2)
+- Single day, multiple slots (extra hours) payment calculation -> to verify, extra feature
+- Multiple days payment calculation -> must have (value of 3)
+- Check incongruences on the input, for example MO:03:30-12:30 and MO:05:00-14:30 does not make sense -> epic , lets trust on the input
+
+Now that we have the features, let start for thinking what each feature represents on terms of classes and methods
+
+- User facing side: Can be contained on a single class that accepts inputs and SHOWS the input(does not calculate)
+	- However, should this class also deal with input validation and correctness? Lets leave it to another class
+- Payment calculation => needs of an employee information => this is an object so it can contained on a different class so:
+	- Employee is a class, contains the employee name and his/her worked hours.
+	- Then we need a class that reads the employee information and process the payment, another class
+
+
 

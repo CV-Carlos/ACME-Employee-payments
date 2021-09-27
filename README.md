@@ -1,5 +1,17 @@
 # ACME-payments
 
+This projects make use of Serenety BDD Cucumber testing v2.6. This library allows for the creation of use case scenarios that can be tested, please
+find them on the calculate_payment.feature file, and the testing steps on the stepdefinitions on the test folder
+It uses JUnit 4.13.1 for unit testing, find them on JUnit tests folder.
+
+The project uses an MVC desing pattern combined with single-responsability. The project has 3 main classes: Main(View), CalculateSalary(Controller) and EmployeeEntry(Model) whcih make use of a suite of helper classes. These helper classes are used by more than one class and help to keep the code easier to modify and maintain.
+
+To use the the program, you can call the main class which presents the instructions about how to use the system. 
+For a quick test, a .txt file named test is located on the root folder. You can run it by inserting "file test" on the console.
+The program also allows for an example (use input ?), and manual input.
+
+It case you want to run the cucumber test, run the class called CucumberTestSuite located on the test folder, it generates a report on serenity root folder(/target/site/serenity), called index.html.
+
 **Initial information and requirements**
 
 Time slots - Payments
@@ -146,5 +158,10 @@ Now that we have the features, let start for thinking what each feature represen
 	- Employee is a class, contains the employee name and his/her worked hours.
 	- Then we need a class that reads the employee information and process the payment, another class
 
-
+Based on current results, there are going to be 3 main classes
+View: Main method - customer facing, in charge of input and output
+	- Uses a helper class for input sanitization 
+Controller: In charge of calculations, it responds to user requests and store any change on the model, in this case the employee entry
+	- May need helper classes for date creation and date calculations
+Model: Not a real "model" has it is not permanent but it store the employee information.
 

@@ -2,7 +2,7 @@
 
 This projects make use of Serenety BDD Cucumber testing v2.6. This library allows for the creation of use case scenarios that can be tested, please
 find them on the calculate_payment.feature file, and the testing steps on the stepdefinitions on the test folder
-It uses JUnit 4.13.1 for unit testing, find them on JUnit tests folder.
+It uses JUnit v5.7 for unit testing, find them on JUnit tests folder.
 
 The project uses an MVC desing pattern combined with single-responsability. The project has 3 main classes: Main(View), CalculateSalary(Controller) and EmployeeEntry(Model) whcih make use of a suite of helper classes. These helper classes are used by more than one class and help to keep the code easier to modify and maintain.
 

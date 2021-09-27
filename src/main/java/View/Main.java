@@ -1,13 +1,5 @@
 package View;
 
-/*
-*           USER FACING - CLASS
-*
-* This
-*
-* */
-
-
 import java.io.*;
 import java.util.Scanner;
 
@@ -16,6 +8,10 @@ import Helpers.InputValidation;
 import Model.EmployeeEntry;
 import Helpers.PaymentsInformation;
 
+/*
+    Notice that this class make use of InputValidation for input sanitization
+    and CalculateSalary to determine the employee payment
+ */
 public class Main {
 
     public static void main(String[] args) {

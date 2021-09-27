@@ -9,7 +9,13 @@ import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 import java.util.LinkedHashMap;
 
-
+/*
+    Notice that class makes use of DateTimeHandlers to obtain real dates
+    what helps/facilitates the comparison of dates
+    This resolve the issue of 0:00 being before and after any time.
+    It also uses PaymentsInformation to obtain updated time-slots and
+    payment information
+ */
 public class CalculateSalary
 {
 
